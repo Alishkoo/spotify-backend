@@ -7,7 +7,7 @@ import { logger } from './logger'
 import { createBucket, listBuckets, deleteBucket, uploadFile, downloadFile, processTextFile, updateTextFile } from './utils/s3-middleware'
 import cors from 'cors'
 
-
+const PORT = process.env.PORT || 5000
 connectDB()
 
 const app = express()
@@ -22,6 +22,6 @@ const server = createServer(app)
 
 
 
-server.listen(5000, () => {
-  console.log('server running at http://localhost:5000')
+server.listen(PORT, () => {
+  console.log(`server running at http://localhost:${PORT}`)
 })
